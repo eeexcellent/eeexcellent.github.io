@@ -3,9 +3,7 @@ const tg = window.Telegram.WebApp;
 // Informs Telegram that WebApp is ready to interact
 tg.ready();
 const dataToSend = {
-  name: "John Doe",
-  age: 30,
-  email: "john@example.com"
+  is_pressed: true
 };
 
 // Send data back to the bot
