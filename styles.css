@@ -36,13 +36,10 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid red; */
-  background-image: url(shared/images/WebBG.png);
 }
 
 .wl-container {
   color: #fff;
-  background-color: #424242;
   font-family: Nippo-Light, "Segoe UI", Verdana, sans-serif;
   display: flex;
   flex-direction: column;
@@ -50,10 +47,8 @@ main {
   justify-content: center;
   gap: 16px;
   width: 100%;
-  margin: 0 48px 0;
   height: 200px;
   border-radius: 16px;
-  backdrop-filter: blur(0.5px);
 }
 
 .wl-container p {
@@ -101,7 +96,7 @@ main {
 .wl-button {
   font-family: Nippo-Medium, "Segoe UI", Verdana, sans-serif;
   font-size: 18px;
-  width: 220px;
+  width: 100%;
   height: 56px;
   border: none;
   outline: none;
