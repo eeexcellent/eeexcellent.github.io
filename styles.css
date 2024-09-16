@@ -1,3 +1,12 @@
+@import url("shared/fonts/Nippo_Complete/Fonts/WEB/css/nippo.css");
+
+:root {
+  --wl-highlight-color: #009dff;
+  --wl-highligth-color-secondary: #10186d;
+  --wl-button-bg-color: #1c1c1e;
+  --wl-button-color: #bcbcbc;
+}
+
 *,
 *::before,
 *::after {
@@ -6,107 +15,100 @@
   padding: 0;
 }
 
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
 body {
   background-color: black;
+  height: 100%;
+  overflow-y: auto;
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid red; */
+  background-image: url(shared/images/WebBG.png);
 }
 
 .wl-container {
   color: #fff;
+  background-color: #424242;
+  font-family: Nippo-Light, "Segoe UI", Verdana, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 200px auto 0;
-  max-width: 500px;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  margin: 0 48px 0;
+  height: 200px;
+  border-radius: 16px;
+  backdrop-filter: blur(0.5px);
 }
 
 .wl-container p {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 36px;
+  font-size: 40px;
   text-align: center;
-  margin-bottom: 20px;
   color: white;
   font-weight: 700;
 }
 
 .wl-container p span {
-  color: #1f22d7;
-  font-weight: 900;
-}
-
-.wl-button {
-  width: 220px;
-  height: 50px;
-  border: none;
-  outline: none;
-  color: #fff;
-  background: #111;
-  cursor: pointer;
   position: relative;
-  z-index: 0;
-  border-radius: 10px;
-
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 900;
-  font-size: 20px;
-  animation: glowing 20s linear infinite;
+  font-family: Nippo-Bold, "Segoe UI", Verdana, sans-serif;
+  color: var(--wl-highlight-color);
+  z-index: 1;
 }
 
-.wl-button:before {
-  content: "";
-  background: linear-gradient(
-    45deg,
-    #00ffee,
-    #009dff,
-    #1100ff,
-    #009dff,
-    #00ffee
-  );
+.wl-container p span::before {
   position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowing 20s linear infinite;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
-}
-
-.wl-button:active {
-  color: #000;
-}
-
-.wl-button:active:after {
-  background: transparent;
-}
-
-.wl-button:hover:before {
-  opacity: 1;
-}
-
-.wl-button:after {
-  z-index: -1;
   content: "";
-  position: absolute;
-  width: 100%;
+  z-index: -1;
+  right: -5px;
+  width: calc(100% + 9px);
   height: 100%;
-  background: #111;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
+  border-radius: 5px;
+  border: 2px solid var(--wl-highlight-color);
+  background: linear-gradient(
+    90deg,
+    var(--wl-highligth-color-secondary) 33%,
+    var(--wl-highlight-color) 66%,
+    var(--wl-highligth-color-secondary) 100%
+  );
+  background-size: 400%;
+  animation: gradientglow 10s linear infinite;
 }
 
-@keyframes glowing {
+@keyframes gradientglow {
   0% {
     background-position: 0 0;
   }
-  50% {
-    background-position: 400% 0;
-  }
   100% {
-    background-position: 0 0;
+    background-position: 400% 400%;
   }
+}
+
+.wl-button {
+  font-family: Nippo-Medium, "Segoe UI", Verdana, sans-serif;
+  font-size: 18px;
+  width: 220px;
+  height: 56px;
+  border: none;
+  outline: none;
+  color: var(--wl-button-color);
+  background: var(--wl-button-bg-color);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 8px;
 }
