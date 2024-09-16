@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: rgb(10, 20, 40);
+  background-color: black;
 }
 
 .wl-container {
@@ -24,14 +24,13 @@ body {
   font-size: 36px;
   text-align: center;
   margin-bottom: 20px;
-  color: #1328a1;
+  color: white;
   font-weight: 700;
 }
 
 .wl-container p span {
   color: #1f22d7;
   font-weight: 900;
-  text-decoration: underline;
 }
 
 .wl-button {
